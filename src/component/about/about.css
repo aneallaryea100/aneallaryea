@@ -1,9 +1,26 @@
+@keyframes myaboutPersonality {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes myaboutDescription {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
 .aboutContainer {
     background-color: #000;
     color: beige;
     height: 100vh;
     display: flex;
-    /* justify-content: space-around; */
     align-items: center;
     text-align: center;
     padding: 3rem 0rem;
@@ -11,7 +28,6 @@
 }
 
 .aboutDescription {
-    /* background-color: grey !important; */
     color: beige;
     width: 80%;
     padding: 2rem;
@@ -22,13 +38,13 @@
     text-align: start;
     font-size: 1.5rem;
     line-height: normal !important;
+    animation: myaboutDescription 1s ease-in-out;
 }
 
 .amoutme {
     font-size: 5rem;
     font-weight: 600;
     margin-bottom: 2rem;
-    /* text-align: right; */
     text-decoration: underline;
     width: 100%;
     display: flex;
@@ -44,6 +60,7 @@
     flex-direction: column;
     align-items: center;
     border-radius: 5rem;
+    animation: myaboutPersonality 1s ease-in-out;
 }
 
 .imgpersonality {
@@ -55,15 +72,33 @@
 
 .btnaboutContainer {
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    width: 100%;
-    margin-top: 2rem;
+    justify-content: space-around;
+    align-items: center;
+    width: 15%;
+    height: 8%;
+    margin-top: 0rem;
+    position: fixed;
+    z-index: 5;
+    bottom: 3rem;
+    right: 1rem;
+    padding: 0rem;
 }
 
 .linethrough {
     border: 0.3rem solid #fff;
     height: 60vh;
+}
+
+.listtechContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding: 0.2rem;
+}
+
+.litstech {
+    list-style-type: square;
 }
 
 .skillsContainer {
@@ -77,4 +112,21 @@
 .aboutIcon {
     padding: 1rem;
     border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1f1f1;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.cvlink {
+    color: beige;
+    text-align: left;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.ppp {
+    margin: 1rem 0rem;
 }

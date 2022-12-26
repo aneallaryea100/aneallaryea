@@ -11,10 +11,10 @@ const Navigation = () => {
 
         <div className='navLinks'>
             <ul className='navlists'>
-                <li><a href='#'>Home</a></li>
+                <li><a href='#welcome'>Home</a></li>
                 <li><a href='#projects'>Projects</a></li>
                 <li><a href='#aboutme'>About</a></li>
-                <li><a href='#'>Contact</a></li>
+                <li><a href='#contact'>Contact</a></li>
             </ul>
             <AiOutlineBars className='navIcon' />
         </div>

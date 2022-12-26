@@ -3,7 +3,7 @@ import './welcome.css'
 
 export default function Welcome() {
   return (
-    <div className='welcomeContainer'>
+    <div className='welcomeContainer' id='welcome'>
       <div className='aneal'>
       <h1 className='nametext'><code>Hello <span class="wave">👋</span>,  I'm Aneal Laryea.</code></h1>
       <p className='paragraphtext'>I'm a full-stack web developer.</p>
