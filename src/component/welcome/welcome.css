@@ -1,0 +1,119 @@
+.welcomeContainer {
+    background-color: black;
+    color: beige;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* Define the keyframes for the animation */
+@keyframes chat-animation {
+    0% {
+      content: "";
+    }
+    10% {
+      content: "A";
+    }
+    20% {
+      content: "An";
+    }
+    30% {
+      content: "Ane";
+    }
+    40% {
+      content: "Anea";
+    }
+    55% {
+      content: "Aneal";
+    }
+    60% {
+      content: "Aneal ";
+    }
+    70% {
+      content: "Aneal L";
+    }
+    80% {
+      content: "Aneal La";
+    }
+    95% {
+      content: "Aneal Lar";
+    }
+    95% {
+      content: "Aneal Lary";
+    }
+    98% {
+      content: "Aneal Larye";
+    }
+    100% {
+      content: "Aneal Laryea";
+    }
+  }
+  
+  /* Apply the animation to an element */
+  .aneal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+
+  .nametext {
+    font-size: 3em;
+    font-weight: 700;
+    line-height: normal;
+    animation: chat-animation 5s linear 1;
+}
+
+.paragraphtext {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  line-height: normal;
+}
+
+.talkbtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2em;
+  background-color: #f1f1f1;
+  font-size: 1rem;
+  padding: 1rem 3rem;
+  cursor: pointer;
+  border-radius: 1em;
+}
+
+.wave {
+  animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
+  animation-duration: 2.5s;        /* Change to speed up or slow down */
+  animation-iteration-count: infinite;  /* Never stop waving :) */
+  transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
+  display: inline-block;
+}
+
+@keyframes wave-animation {
+    0% { transform: rotate( 0.0deg) }
+   10% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
+   20% { transform: rotate(-8.0deg) }
+   30% { transform: rotate(14.0deg) }
+   40% { transform: rotate(-4.0deg) }
+   50% { transform: rotate(10.0deg) }
+   60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
+  100% { transform: rotate( 0.0deg) }
+}
+
+
+
+
+/* For demonstration purposes only: */
+/* body { font-size: 3.5em }
+h1 { font-size: 0.5em } */
+
+  
+  
+  
+  
+  
+  

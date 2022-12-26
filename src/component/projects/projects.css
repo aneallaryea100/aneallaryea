@@ -1,0 +1,129 @@
+.projectsContainer {
+    background-color: #fff;
+    color: black;
+    margin: 0;
+    padding: 3rem 0rem;
+}
+
+.headProject {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-weight: 900;
+    font-size: 2rem;
+    padding: 3rem 0rem;
+}
+
+.listprojectContainer {
+    /* repeat(4, 20rem) */
+    display: grid;
+    grid-template-columns:  repeat(auto-fit, minmax(250px, 1fr)) ;
+    z-index: 1;
+    margin: 1rem 3rem;
+    gap: 3rem;
+    justify-items: center;
+    align-items: center;
+}
+
+.projectCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: beige;
+    background-color: #000;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.05);
+    width: 20rem;
+    scroll-snap-align: center;
+    transition: all 0.25s ease;
+}
+
+.projectImage {
+    width: 20rem;
+    height: 15rem;
+    padding: 0.2rem;
+    
+}
+
+.projectName {
+    text-decoration: underline;
+    margin: 1rem 0rem;
+    font-size: 1.5rem;
+}
+
+.realImage {
+    width: 100%;
+    height: 100%;
+    border-radius: 1.5rem;
+}
+
+.projectDescription {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.projectTech {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.techProject {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    background-color: #000;
+    color: #fff;
+    margin: 0.5rem 1rem;
+}
+
+.btnDetails {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    width: 100%;
+    background-color: #f1f1f1;
+    font-size: 1rem;
+    padding: 1rem 3rem;
+    cursor: pointer;
+    border-radius: 1em;
+}
+
+@media screen and (max-width: 600px) {
+    /* repeat(auto-fit, minmax(250px, 1fr) */
+.listprojectContainer {
+    display: grid;
+    grid-template-columns: repeat(1, 20rem);
+    z-index: 1;
+    margin: 1rem 5rem;
+    gap: 3rem;
+}
+
+.headProject {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-weight: 900;
+    font-size: 2rem;
+    padding: 3rem 0rem;
+    width: 100%;
+    text-align: center;
+}
+
+}

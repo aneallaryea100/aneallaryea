@@ -1,73 +1,11 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
+# Aneal Laryea
 
-# Project Name
+Hi there! My name is Aneal Laryea and I am a full-stack developer with a passion for building Mobile and Web applications. I am skilled in HTML, CSS, JavaScript, React, Ruby, Ruby on Rails, MySQL, PostgreSQL  and have a strong background in Marketing and Business Administration.
 
-> Description the project.
+On my GitHub profile, you will find a range of projects that showcase my abilities and reflect my interests. Some highlights include:
 
+[Project Name]: A [Project Description] built using [Technologies Used]. I was responsible for [Your Contributions].
+[Project Name]: A [Project Description] that utilizes [Technologies Used]. I worked on [Your Contributions] for this project.
+[Project Name]: A [Project Description] developed with [Technologies Used]. My key responsibilities on this project included [Your Contributions].
+In addition to my technical skills, I am a strong team player and always strive to continuously learn and improve my abilities. Thank you for visiting my profile and I hope you find my projects interesting and useful.
 
-## Built With
-
-- Major languages
-- Frameworks
-- Technologies used
-
-## Live Demo (if available)
-
-[Live Demo Link](https://livedemo.com)
-
-
-## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-### Setup
-
-### Install
-
-### Usage
-
-### Run tests
-
-### Deployment
-
-
-
-## Authors
-
-👤 **Author1**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome!
-
-Feel free to check the [issues page](../../issues/).
-
-## Show your support
-
-Give a ⭐️ if you like this project!
-
-## Acknowledgments
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
-
-## 📝 License
-
-This project is [MIT](./MIT.md) licensed.
