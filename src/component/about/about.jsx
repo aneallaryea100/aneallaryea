@@ -7,6 +7,7 @@ function About() {
   return (
     <div>
     <div className='aboutContainer' id='aboutme'>
+    <h1 className='amoutmesmallscreen'><code>About me</code></h1>
       <div className='aboutPersonality'>
         <img className='imgpersonality' src={img1} alt='aneal laryea' />
       </div>
@@ -35,16 +36,16 @@ function About() {
           </ul>
           </div>
 
-          <a href="/path/to/my-cv.pdf" target="_blank" download="My CV.pdf" className='cvlink'>
+          <a href="https://docs.google.com/document/d/13TzaREufesZA7KSEc-5XRk5xl2ltWEwOckuljC9Z6Kg/edit?usp=sharing" target="_blank" download="Aneallaryea.pdf" className='cvlink'  rel='noreferrer'>
               Curriculum vitae📃
           </a>
       </div>
     </div>
     <div className="btnaboutContainer">
-            <button type="button" className="aboutIcon"><AiOutlineTwitter /></button>
-            <button type="button" className="aboutIcon"><AiFillLinkedin /></button>
-            <button type="button" className="aboutIcon"><AiFillGithub /></button>
-            <button type="button" className="aboutIcon"><AiFillMail /></button>
+            <button type="button" className="aboutIcon"><a href="https://twitter.com/AnealLaryea" target="_blank" rel="noreferrer"><AiOutlineTwitter /></a></button>
+            <button type="button" className="aboutIcon"><a href="https://www.linkedin.com/in/niianeal/" target="_blank" rel="noreferrer"><AiFillLinkedin /></a></button>
+            <button type="button" className="aboutIcon"><a href="https://github.com/aneallaryea100" target="_blank" rel="noreferrer"><AiFillGithub /></a></button>
+            <button type="button" className="aboutIcon"><a href="mailto:aneallaryea100@gmail.com" target="_blank" rel="noreferrer"><AiFillMail /></a></button>
       </div>
     </div>
   )

@@ -14,6 +14,14 @@
     width: 100%;
 }
 
+.logo a {
+    text-decoration: none;
+    color: beige;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 1rem;
+}
+
 .navlists {
     list-style: none;
     display: flex;
@@ -35,6 +43,28 @@
     font-size: 1.5rem;
     cursor: pointer;
     margin: 0rem 2rem;
+}
+
+.toggleMenuIcon {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.navlistsToggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100vh;
+    width: 50%;
+    background-color: beige;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    list-style-type: none !important;
 }
 
 @media screen and (max-width: 600px) {
@@ -67,4 +97,85 @@
         cursor: pointer;
         margin: 0rem 2rem;
     }
+
+    .navlistsToggle {
+        display: flex !important;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 100vh;
+        width: 100%;
+        background-color: beige;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 1;
+        list-style-type: none !important;
+        transition: all 1.5s ease-in-out;
+    }
+
+    .navlistsToggle li a {
+        padding: 0 10px;
+        text-decoration: none;
+        list-style-type: none;
+        color: #000;
+        margin: 0rem 1rem;
+        font-size: 2rem;
+    }
+
+    .navlistsToggle li a:hover {
+        color: beige;
+        background-color: #000;
+    }
+
+    .toggleMenuIconClose {
+        border: none;
+        outline: none;
+        background-color: transparent;
+        cursor: pointer;
+        font-size: 2rem;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+        margin: 0rem 1rem;
+    }
+
+    .toggleMenuIconClose :hover {
+        color: beige !important;;
+        background-color: #000;
+        border-radius: 100%;
+    }
+
+    .btntoggleContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        gap: 0.2rem;
+    }
+
+    .btntoggleContainer a {
+        text-decoration: none !important;
+        color: beige;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .toggleIcon {
+        background-color: #000;
+        border-radius: 100%;
+        padding: 0.5rem;
+        color: beige;
+        font-size: 1.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        flex-direction: row-reverse;
+    }
+
+
   }

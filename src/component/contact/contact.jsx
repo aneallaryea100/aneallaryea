@@ -18,7 +18,7 @@ function Contact() {
                                </label>
                             </li>
                             <li className='inputcontactfield'>
-                                <input type="email" id="mail" name="user_email" placeholder="Email address" />
+                                <input type="email" id="mail" name="user_email" placeholder="Email address" required/>
                             </li>
                             <li className='inputcontactfield'>
                                 <label>
