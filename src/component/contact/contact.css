@@ -123,7 +123,7 @@
     border: 1px solid beige;
   }
 
-  @media screen and (max-width: 600px) {
+  @media only screen and (max-width: 768px) {
     .contactContainer {
       background-color: #fff;
       padding: 1rem 0;

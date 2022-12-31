@@ -136,7 +136,7 @@
     display: none;
 }
 
-@media screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
     .aboutContainer {
         background-color: #000;
         color: beige;
