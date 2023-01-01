@@ -20,8 +20,8 @@
     display: grid;
     grid-template-columns:  repeat(auto-fit, minmax(250px, 1fr)) ;
     z-index: 1;
-    margin: 1rem 3rem;
-    gap: 3rem;
+    /* margin: 1rem 3rem; */
+    /* gap: 3rem; */
     justify-items: center;
     align-items: center;
 }
@@ -108,9 +108,9 @@
     /* repeat(auto-fit, minmax(250px, 1fr) */
 .listprojectContainer {
     display: grid;
-    grid-template-columns: repeat(1, 20rem);
+    /* grid-template-columns: repeat(1, 20rem); */
     z-index: 1;
-    margin: 1rem 5rem;
+    /* margin: 1rem 5rem; */
     gap: 3rem;
 }
 
