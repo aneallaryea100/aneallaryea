@@ -1,20 +1,26 @@
 .contactContainer {
     background-color: #fff;
     height: 100vh;
-    padding: 5rem 0;
-}
-
-.contacthead {
-    /* margin: 1rem 2rem; */
-    color: #000;
-    font-size: 5rem;
-    font-weight: 600;
-    /* margin: 1rem 0rem 0rem 3rem; */
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    flex-direction: column;
+    
+    /* padding: 5rem 0; */
+}
+
+.contacthead {
+    /* margin: 1rem 2rem; */
+    /* color: #000;
+    font-size: 3.5rem;
+    font-weight: 600; */
+    /* margin: 1rem 0rem 0rem 3rem; */
+    /* width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; */
 }
 
 .sec-form {
@@ -27,14 +33,15 @@
   .hold-form {
     display: flex;
     justify-content: space-around;
-    margin: 5rem 0rem 0rem 0rem;
-    width: 100%;
+    /* margin: 5rem 0rem 0rem 0rem; */
+    /* width: 100%; */
+    /* margin: 2rem 0rem; */
   }
   
   .context {
-    margin-bottom: 73px;
-    width: 40%;
-    height: 25rem;
+    /* margin-bottom: 73px; */
+    /* width: 40%;
+    height: 20rem; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -47,7 +54,7 @@
     /* flex-direction: column; */
     justify-content: flex-start;
     align-items: center;
-    margin-left: 5rem;
+    /* margin-left: 5rem; */
   }
 
 
@@ -56,9 +63,9 @@
   }
 
   .fotext {
-    font-size: 4rem;
+    /* font-size: 4rem;
     font-weight: 700;
-    line-height: 5rem;
+    line-height: 5rem; */
     letter-spacing: 0.1rem;
     text-align: center;
     color: black;
@@ -67,7 +74,7 @@
   .fmlist {
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    /* gap: 50px; */
   }
   
   input {

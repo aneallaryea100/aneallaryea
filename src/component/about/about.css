@@ -20,11 +20,14 @@
     background-color: #000;
     color: beige;
     height: 100vh;
-    display: flex;
+    width: 100%;
+    /* display: flex;
     align-items: center;
-    text-align: center;
-    padding: 3rem 0rem;
-    margin: 0 auto;
+    text-align: center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
 }
 
 .aboutDescription {
@@ -125,7 +128,7 @@
     color: beige;
     text-align: left;
     width: 100%;
-    margin-top: 2rem;
+    margin: 2rem 0rem;
 }
 
 .ppp {
@@ -144,9 +147,10 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        text-align: center;
-        padding: 3rem 0rem;
-        margin: 0rem auto 15rem auto;
+        justify-content: center;
+        margin-top: 1rem;
+        /* padding: 3rem 0rem;
+        margin: 0rem auto 15rem auto; */
     }
 
     .aboutDescription {
@@ -162,6 +166,18 @@
         line-height: normal !important;
         animation: myaboutDescription 1s ease-in-out;
     }
+
+    .aboutPersonality {
+        width: 25rem;
+        height: 15rem;
+        padding: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 5rem;
+        animation: myaboutPersonality 1s ease-in-out;
+    }
+    
 
     .amoutme {
         font-size: 5rem;
@@ -196,5 +212,15 @@
 
     .amoutmesmallscreen {
         display: block;
+        margin: 0rem;
+    }
+
+    .cvlink {
+        color: beige;
+        text-align: left;
+        width: 100%;
+        margin: 1rem 0rem;
+        /* margin-top: 2rem; */
+        /* margin-bottom: 2rem; */
     }
 }
