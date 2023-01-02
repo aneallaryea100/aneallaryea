@@ -4,8 +4,9 @@ import './contact.css'
 function Contact() {
   return (
     <div className='contactContainer' id='contact'>
-        <h1 className='contacthead'><code>Contact me</code></h1>
       <div class="hold-form">
+      <h1 className='contacthead'><code>Get in touch</code></h1>
+      <div className="formFlexContext">
                  <div class="context">
                      <h5 class="fotext">I'm always interested in hearing about new projects, so if you'd like to chat please get in touch.</h5>
                  </div>
@@ -33,6 +34,7 @@ function Contact() {
                          
                      </form>
                  </div>
+            </div>
       </div>
     </div>
   )

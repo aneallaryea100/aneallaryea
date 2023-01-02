@@ -2,79 +2,69 @@
     background-color: #fff;
     height: 100vh;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    
-    /* padding: 5rem 0; */
 }
 
 .contacthead {
-    /* margin: 1rem 2rem; */
-    /* color: #000;
+    color: #000;
     font-size: 3.5rem;
-    font-weight: 600; */
-    /* margin: 1rem 0rem 0rem 3rem; */
-    /* width: 100%;
+    font-weight: 600;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center; */
-}
+    text-decoration: underline;
 
-.sec-form {
-    background: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+}
   
   .hold-form {
-    display: flex;
+    /* display: flex;
+    flex-direction: column;
     justify-content: space-around;
-    /* margin: 5rem 0rem 0rem 0rem; */
-    /* width: 100%; */
-    /* margin: 2rem 0rem; */
+    align-items: center; */
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    gap: 3rem;
+  }
+
+  .formFlexContext {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
   }
   
   .context {
-    /* margin-bottom: 73px; */
-    /* width: 40%;
-    height: 20rem; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-size: 3rem;
+    width: 30%;
   }
 
   .form-card {
-    /* width: 60%; */
     display: flex;
-    /* flex-direction: column; */
-    justify-content: flex-start;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    /* margin-left: 5rem; */
-  }
-
-
-  .fmlist {
-    list-style-type: none;
+    /* width: 70%; */
   }
 
   .fotext {
-    /* font-size: 4rem;
-    font-weight: 700;
-    line-height: 5rem; */
     letter-spacing: 0.1rem;
     text-align: center;
     color: black;
+    font-size: 3.5rem;
   }
   
   .fmlist {
     display: flex;
     flex-direction: column;
-    /* gap: 50px; */
+    list-style-type: none;
+    gap: 3rem;
   }
   
   input {
@@ -89,7 +79,7 @@
     padding: 0.4rem 0.2rem;
     text-align: left;
     color: #727170;
-    width: 30rem;
+    width: 100%;
   }
   
   textarea {
@@ -140,20 +130,12 @@
       color: #000;
       font-size: 2rem;
       font-weight: 600;
-      margin-bottom: 0rem;
-      display: flex;
-      justify-content: center;
-      align-items: baseline;
-      text-align: center;
-      width: 100%;
-  }
-  
-  .sec-form {
-      background: #fff;
       display: flex;
       justify-content: center;
       align-items: center;
-    }
+      text-align: center;
+      width: 100%;
+  }
     
     .hold-form {
       display: flex;
@@ -164,7 +146,6 @@
     
     .context {
       width: 100%;
-      height: 0rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -175,11 +156,6 @@
       display: flex;
       justify-content: flex-start;
       align-items: center;
-    }
-  
-  
-    .fmlist {
-      list-style-type: none;
     }
   
     .fotext {
@@ -194,6 +170,7 @@
     .fmlist {
       display: flex;
       flex-direction: column;
+      list-style-type: none;
     }
     
     input {
@@ -247,6 +224,14 @@
       color: #000;
       background: beige;
       border: 1px solid beige;
+    }
+
+    .formFlexContext {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      width: 100%;
     }
   
   

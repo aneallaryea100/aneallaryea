@@ -7,11 +7,12 @@
     height: 60px;
     color: beige;
     background-color: #000;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(235, 193, 193, 0.1);
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+    z-index: 1;
 }
 
 .logo a {
