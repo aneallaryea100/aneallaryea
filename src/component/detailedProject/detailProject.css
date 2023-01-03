@@ -1,0 +1,262 @@
+.detailwrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    z-index: 999;
+    margin: 0 auto;
+}
+
+.detailContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    width: 80%;
+    height: 80%;
+    background-color: #fff;
+    z-index: 999;
+    margin: 0 auto;
+}
+
+.detailedProjectNameHead {
+    text-decoration: underline;
+    width: 100%;
+}
+
+.imageWithInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 1.5rem;
+    width: 80%;
+    gap: 1rem;
+}
+
+.detailedImage {
+    width: 80rem;
+    height: 25rem;
+    border-radius: 1.5rem;
+}
+
+.imagedetailsView {
+    width: 100%;
+    height: 100%;
+    border-radius: 1.5rem;
+}
+
+.detailedInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    padding: 1rem;
+    height: 50%;
+    border-radius: 1.5rem;
+}
+
+.detailedParagraph {
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.detailedTech {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.techListDetailed {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    border: 0.2rem solid #000;
+    color: #000;
+    border-radius: 0.3rem ;
+}
+
+.detailedButtoncontainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 55%;
+}
+
+.detailedButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 3rem;
+    background-color: beige;
+    border: 0.2rem solid #000;
+    border-radius: 0.3rem;
+    color: #000;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.returnIcon {
+    position: relative;
+    top: 1rem;
+    left: 40rem;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    width: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    border: none;
+}
+
+.closeIconDetail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: beige;
+    background-color: #000;
+    border-radius: 5rem;
+    outline: none;
+    cursor: pointer;
+}
+
+.linkbtnlive {
+    color: #000;
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .detailwrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0,0,0,0.4);
+        z-index: 999;
+        margin: 0 auto;
+    }
+
+    .detailContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        z-index: 999;
+        margin: 0 auto;
+    }
+
+    .imageWithInfo {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        background-color: #000;
+        border-radius: 1.5rem;
+    }
+
+    .detailedImage {
+        width: 23.5rem;
+        height: 15rem;
+        background-color: #000;
+        border-radius: 1.5rem;
+    }
+
+    .imagedetailsView {
+        width: 100%;
+        height: 100%;
+        border-radius: 1.5rem;
+    }
+
+    .detailedButtoncontainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .returnIcon {
+        position: relative;
+        top: 0rem;
+        left: 17rem;
+        font-size: 2rem;
+        color: #fff;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        background-color: #000;
+        width: 2.5rem;
+    }
+
+    .detailedProjectNameHead {
+        text-decoration: underline;
+        width: 100%;
+        font-size: 1.5rem;
+    }
+
+    .detailedParagraph {
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: normal;
+        color: #fff;
+    }
+
+    .techListDetailed {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5rem;
+        border: 0.2rem solid beige;
+        color: beige;
+        border-radius: 0.3rem ;
+    }
+
+    .closeIconDetail {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        color: beige;
+        background-color: #000;
+        border-radius: 5rem;
+        outline: none;
+        cursor: pointer;
+    }
+    
+}

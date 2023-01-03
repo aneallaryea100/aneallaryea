@@ -6,6 +6,7 @@ import About from './component/about/about';
 import Contact from './component/contact/contact';
 import Footer from './component/footer/footer';
 
+
 function App() {
   return (
    <div className="tatenda">
@@ -15,6 +16,7 @@ function App() {
       <About />
       <Contact />
       <Footer />
+      
    </div>
   );
 }
