@@ -215,13 +215,14 @@
     .returnIcon {
         position: relative;
         top: 0rem;
-        left: 17rem;
+        left: 7rem;
         font-size: 2rem;
         color: #fff;
         cursor: pointer;
         transition: all 0.3s ease-in-out;
         background-color: #000;
         width: 2.5rem;
+        margin: 1.5rem 0rem;
     }
 
     .detailedProjectNameHead {
