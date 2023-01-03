@@ -80,6 +80,7 @@
     text-align: left;
     color: #727170;
     width: 100%;
+    background: transparent !important;
   }
   
   textarea {
@@ -156,6 +157,7 @@
       display: flex;
       justify-content: flex-start;
       align-items: center;
+      margin-top: 2rem;
     }
   
     .fotext {
@@ -186,6 +188,7 @@
       text-align: left;
       color: #727170;
       width: 20rem;
+      background: transparent !important;
     }
     
     textarea {
@@ -233,7 +236,6 @@
       align-items: center;
       width: 100%;
     }
-  
   
   }
   

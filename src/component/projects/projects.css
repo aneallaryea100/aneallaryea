@@ -16,14 +16,13 @@
 }
 
 .listprojectContainer {
-    /* repeat(4, 20rem) */
     display: grid;
-    grid-template-columns:  repeat(auto-fit, minmax(250px, 1fr)) ;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 2rem;
     z-index: 1;
-    /* margin: 1rem 3rem; */
-    /* gap: 3rem; */
     justify-items: center;
     align-items: center;
+    scroll-snap-type: x mandatory;
 }
 
 .projectCard {
@@ -105,12 +104,10 @@
 }
 
 @media only screen and (max-width: 768px) {
-    /* repeat(auto-fit, minmax(250px, 1fr) */
 .listprojectContainer {
     display: grid;
-    /* grid-template-columns: repeat(1, 20rem); */
+    grid-template-columns: 1fr;
     z-index: 1;
-    /* margin: 1rem 5rem; */
     gap: 3rem;
 }
 

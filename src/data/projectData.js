@@ -16,7 +16,7 @@ const projectData = [
         livedemo: 'https://diegomero.github.io/javascript-capstone/dist/',
         github: 'https://github.com/DiegoMero/javascript-capstone',
         technologies: ['HTML', 'CSS', 'JavaScript']
-    },
+    }, 
     {
         id: 3,
         name: 'Rick and Morty',
@@ -26,6 +26,33 @@ const projectData = [
         github: 'https://github.com/DiegoMero/javascript-capstone',
         technologies: ['React', 'Redux', 'Jest']
     }, 
+    {
+        id: 4,
+        name: 'Awesome Books',
+        description: 'This is web app that allows users to enter information about their favorite books. Data displayed on the UI depends on the local storage. The data entered by the user are stored in local storage and can be removed from localStorage.',
+        image: 'https://github.com/aneallaryea100/Awesome-Books/raw/modules/modules/images/awesome.png',
+        livedemo: 'https://teal-blini-0de266.netlify.app/#add-book-section',
+        github: 'https://github.com/aneallaryea100/Awesome-Books/tree/modules',
+        technologies: ['HTML', 'CSS', 'JavaScript']
+    },
+    {
+        id: 5,
+        name: 'Math-Magician',
+        description: 'This project is about using calculators. It is a project aimed at teaching microverse student how to implement react functionality. It is a single app application with a Home section, calculator section and Quote section.',
+        image: 'https://github.com/aneallaryea100/Math-Magicians/raw/testing/src/images/magicmath.png',
+        livedemo: 'https://cool-mochi-15892a.netlify.app/',
+        github: 'https://github.com/aneallaryea100/Math-Magicians/tree/testing',
+        technologies: ['React', 'CSS']
+    },
+    {
+        id: 6,
+        name: 'Spaces Travelers Hub',
+        description: 'A web application, build with React and Redux, that allows users to book rockets and join selected space missions. This is a pair programming project built with Vannesa Bonito and I. I worked on the missions section of the project.',
+        image: 'https://s3.amazonaws.com/poly-screenshots.angel.co/Project/17/1349320/bf17b4403475e70bb2597ed843ace679-original.JPG',
+        livedemo: 'https://poetic-truffle-186148.netlify.app/',
+        github: 'https://github.com/VaneCode/SpaceTravelers',
+        technologies: ['Bootsrap', 'React', 'Redux']
+    },
 ]
 
 export default projectData;
