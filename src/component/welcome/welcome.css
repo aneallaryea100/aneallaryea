@@ -109,7 +109,11 @@
   100% { transform: rotate( 0.0deg) }
 }
 
-@media screen and (max-width: 600px) {
+.breakName {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
   .aneal {
     position: absolute;
     top: 50%;
@@ -129,6 +133,11 @@
     line-height: normal;
     animation: chat-animation 5s linear 1;
     width: 100%;
+    text-align: center;
+}
+
+.breakName {
+  display: block;
 }
 }
 
