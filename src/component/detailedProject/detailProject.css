@@ -187,10 +187,11 @@
         align-items: center;
         background-color: #000;
         border-radius: 1.5rem;
+        width: 80%;
     }
 
     .detailedImage {
-        width: 23rem;
+        width: 90%;
         height: 15rem;
         background-color: #000;
         border-radius: 1.5rem;
