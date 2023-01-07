@@ -22,8 +22,8 @@ const projectData = [
         name: 'Rick and Morty',
         description: 'Rick and Morty is a American adult animated science-fiction sitcom. This web application fetches data from the rick and morty API and allows user to know more about each character in the sitcom.',
         image: 'https://github.com/aneallaryea100/Rick_Morty/raw/testing/src/images/ricky.png',
-        livedemo: 'https://diegomero.github.io/javascript-capstone/dist/',
-        github: 'https://github.com/DiegoMero/javascript-capstone',
+        livedemo: 'https://rickkyandmorty.netlify.app/',
+        github: 'https://github.com/aneallaryea100/Rick_Morty',
         technologies: ['React', 'Redux', 'Jest']
     }, 
     {
@@ -42,7 +42,7 @@ const projectData = [
         image: 'https://github.com/aneallaryea100/Math-Magicians/raw/testing/src/images/magicmath.png',
         livedemo: 'https://cool-mochi-15892a.netlify.app/',
         github: 'https://github.com/aneallaryea100/Math-Magicians/tree/testing',
-        technologies: ['React', 'CSS']
+        technologies: ['HTML','CSS','React']
     },
     {
         id: 6,
