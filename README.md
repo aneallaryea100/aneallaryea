@@ -7,7 +7,7 @@ Hi there! My name is Aneal Laryea and I am a full-stack developer with a passion
 [Live Link](https://aneallaryea.netlify.app/)
 ## Overview
 
-![aneallaryeaImage](./src/images/preview.png)
+![aneallaryeaImage](./src/images/newwelcomepage.png)
 
 
 
