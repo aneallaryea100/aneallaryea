@@ -37,7 +37,7 @@ function About() {
           </div>
 
           <a href="https://docs.google.com/document/d/13TzaREufesZA7KSEc-5XRk5xl2ltWEwOckuljC9Z6Kg/edit?usp=sharing" target="_blank" download="Aneallaryea.pdf" className='cvlink'  rel='noreferrer'>
-              Curriculum vitae📃
+              Resume📃
           </a>
       </div>
     </div>

@@ -139,6 +139,15 @@
 .breakName {
   display: block;
 }
+
+.paragraphtext {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1em;
+  text-align: center;
+  line-height: normal;
+}
 }
 
 
