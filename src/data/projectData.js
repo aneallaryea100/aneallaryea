@@ -53,6 +53,15 @@ const projectData = [
         github: 'https://github.com/VaneCode/SpaceTravelers',
         technologies: ['Bootsrap', 'React', 'Redux']
     },
+    {
+        id: 7,
+        name: 'Tribals',
+        description: 'A web application, built with nextjs, tailwind and redux. Tribals is a platform that allows it users to keep and share their creativity to the world. Users can buy and follow their favorite artist, galleries or read about the latest update on their most liked creatives.',
+        image: '/tribals.png',
+        livedemo: 'https://nextui-sigma.vercel.app/',
+        github: 'https://github.com/aneallaryea100/nextui',
+        technologies: ['Nextjs', 'Tailwind', 'Redux']
+    },
 ]
 
 export default projectData;

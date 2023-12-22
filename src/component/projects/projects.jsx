@@ -38,7 +38,7 @@ function Projects() {
                                 })
                             }
                         </ul>
-                        <button className='btnDetails' type='button' key={project.id} onClick={() => openModal(project)}>Details</button>
+                        <button className='btnDetails bg-black text-white' type='button' key={project.id} onClick={() => openModal(project)}>Details</button>
                     </div>
                 </div>
                 })

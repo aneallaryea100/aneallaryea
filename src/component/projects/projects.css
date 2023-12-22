@@ -16,13 +16,17 @@
 }
 
 .listprojectContainer {
-    display: grid;
+    /* display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     row-gap: 2rem;
     z-index: 1;
     justify-items: center;
     align-items: center;
-    scroll-snap-type: x mandatory;
+    scroll-snap-type: x mandatory; */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 0rem 2rem;
 }
 
 .projectCard {
@@ -96,11 +100,13 @@
     align-items: center;
     bottom: 0;
     width: 19.5rem;
-    background-color: #f1f1f1;
-    font-size: 1rem;
+    background-color: #fff;
+    font-size: 1.5rem;
     padding: 1rem 3rem;
     cursor: pointer;
     border-radius: 1em;
+    color: #000;
+    font-weight: bold;
 }
 
 @media only screen and (max-width: 768px) {
