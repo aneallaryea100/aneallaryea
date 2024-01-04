@@ -16,7 +16,7 @@ function About() {
         <h1 className='amoutme'><code>About me</code></h1>
         <p>
           Hello, my name is Aneal Laryea.
-          I'm a full-stack web developer  based in Accra, Ghana.
+          I'm a Software developer  based in Accra, Ghana.
            I specialize in building exceptional websites, applications, and bringing ideas to life 💡.
            I'm also passionate about afro-beats music 🎶 and I'm always curious to learn more when it comes to new 
            technologies  and creative coding 👾.
@@ -27,12 +27,14 @@ function About() {
           <ul className='litstech'>
             <li className='aboutList'>JavaScript (ES6+)</li>
             <li className='aboutList'>React</li>
+            <li className='aboutList'>NextJS</li>
             <li className='aboutList'>Redux</li>
           </ul>
           <ul className='litstech'>
             <li className='aboutList'>Ruby</li>
             <li className='aboutList'>PostgresSQL</li>
             <li className='aboutList'>MySQL</li>
+            <li className='aboutList'>NodeJS</li>
           </ul>
           </div>
 

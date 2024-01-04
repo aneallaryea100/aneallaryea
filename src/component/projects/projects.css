@@ -2,7 +2,7 @@
     background-color: #fff;
     color: black;
     margin: 0;
-    padding: 3rem 0rem;
+    padding: 1rem 0rem;
 }
 
 .headProject {
@@ -12,7 +12,7 @@
     align-items: center;
     font-weight: 900;
     font-size: 2rem;
-    padding: 3rem 0rem;
+    padding: 1rem 0rem;
 }
 
 .listprojectContainer {
@@ -42,13 +42,45 @@
     width: 20rem;
     scroll-snap-align: center;
     transition: all 0.25s ease;
-}
+    cursor: pointer;
+    position: relative;
+} 
+
 
 .projectImage {
     width: 20rem;
     height: 15rem;
     padding: 0.2rem;
     
+}
+
+.abName {
+    position: absolute;
+    font-weight: bold;
+    background-color: rgba(0,0,0,0.4);
+    opacity: 0;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+.abNameChild {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.projectCard:hover .abName {
+    opacity: 1;
+    background-color: rgba(0,0,0,0.4);
 }
 
 .projectName {
@@ -99,12 +131,12 @@
     justify-content: center;
     align-items: center;
     bottom: 0;
-    width: 19.5rem;
+    width: 100%;
     background-color: #fff;
     font-size: 1.5rem;
-    padding: 1rem 3rem;
+    /* padding: 1rem 3rem; */
     cursor: pointer;
-    border-radius: 1em;
+    /* border-radius: 1em; */
     color: #000;
     font-weight: bold;
 }
@@ -124,7 +156,7 @@
     align-items: center;
     font-weight: 900;
     font-size: 2rem;
-    padding: 3rem 0rem;
+    padding: 1rem 0rem;
     width: 100%;
     text-align: center;
 }

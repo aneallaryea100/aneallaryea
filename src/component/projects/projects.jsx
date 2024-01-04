@@ -7,15 +7,19 @@ function Projects() {
     const [modalOpen, setModalOpen] = useState(false);
     const [selectedProject, setSelectedProject] = useState(null);
 
-    const openModal = project => {
-        setModalOpen(true);
-        setSelectedProject(project);
-      };
+    // const openModal = project => {
+    //     setModalOpen(true);
+    //     setSelectedProject(project);
+    //   };
     
       const closeModal = () => {
         setModalOpen(false);
         setSelectedProject(null);
       };
+
+      const openLiveDemo = (demo) => {
+        window.open(demo,'_blank');
+      }
 
   return (
     <div className='projectsContainer' id='projects'>
@@ -25,22 +29,27 @@ function Projects() {
             {
                 projectData.map((project) => {
                    
-                    return<div className='projectCard' key={project.id}>
-                    <div className='projectImage'>
-                        <img src={project.image} alt={project.name} className='realImage'/>
+                    return(
+                    <div className='projectCard' key={project.id} onClick={() => openLiveDemo(project.livedemo)}>
+                        <div className='projectImage'>
+                            <img src={project.image} alt={project.name} className='realImage'/>
+                        </div>
+                        <div className='abName'>
+                        <h3 className='abNameChild'>{project.name}</h3> 
+                        </div>
+                        {/* <div className='projectDescription'>
+                            <h5 className='projectName'>{project.name}</h5>
+                            <ul className='projectTech'>
+                                {
+                                    project.technologies.map((tech) => {
+                                        return <li className='techProject'>{tech}</li>
+                                    })
+                                }
+                            </ul>
+                            <button className='btnDetails bg-black text-white' type='button' key={project.id} onClick={() => openModal(project)}>Details</button>
+                        </div> */}
                     </div>
-                    <div className='projectDescription'>
-                        <h5 className='projectName'>{project.name}</h5>
-                        <ul className='projectTech'>
-                            {
-                                project.technologies.map((tech) => {
-                                    return <li className='techProject'>{tech}</li>
-                                })
-                            }
-                        </ul>
-                        <button className='btnDetails bg-black text-white' type='button' key={project.id} onClick={() => openModal(project)}>Details</button>
-                    </div>
-                </div>
+                    )
                 })
             }
             {modalOpen && (

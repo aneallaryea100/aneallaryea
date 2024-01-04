@@ -119,31 +119,19 @@
 }
 
 .returnIcon {
-    position: relative;
-    top: 1rem;
-    left: 40rem;
-    font-size: 2rem;
-    color: #fff;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    width: 2.5rem;
+    width: 100%;
+    padding: 0rem 2rem;
     display: flex;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    border: none;
+    justify-content: flex-end;
 }
 
 .closeIconDetail {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-    color: beige;
-    background-color: #000;
-    border-radius: 5rem;
-    outline: none;
-    cursor: pointer;
+   background-color: rgb(21, 20, 20);
+   color: #fff;
+   padding: 0.5rem;
+   font-size: 1.5rem;
+   border-radius: 0.5rem;
+   margin: 0rem 1rem;
 }
 
 .linkbtnlive {
@@ -212,18 +200,6 @@
         width: 100%;
     }
 
-    .returnIcon {
-        position: relative;
-        top: 0rem;
-        left: 7rem;
-        font-size: 2rem;
-        color: #fff;
-        cursor: pointer;
-        transition: all 0.3s ease-in-out;
-        background-color: #000;
-        width: 2.5rem;
-        margin: 1.5rem 0rem;
-    }
 
     .detailedProjectNameHead {
         text-decoration: underline;
@@ -249,7 +225,7 @@
         border-radius: 0.3rem ;
     }
 
-    .closeIconDetail {
+    /* .closeIconDetail {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -259,6 +235,6 @@
         border-radius: 5rem;
         outline: none;
         cursor: pointer;
-    }
+    } */
     
 }
