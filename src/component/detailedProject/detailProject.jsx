@@ -6,10 +6,10 @@ function DetailProject({ project, onClose }) {
   return (
     <div className="detailwrapper">
     <div className='detailContainer'>
-        <div className="detailedProjectName">
           <div className="returnIcon">
-            <button onClick={onClose} className="closeIconDetail"><AiFillCloseCircle className="closeIconDetail"/></button>
+              <button onClick={onClose} className="closeIconDetail"><AiFillCloseCircle /></button>
           </div>
+        <div className="detailedProjectName">
             <h1 className="detailedProjectNameHead">{project.name}</h1>
         </div>
     <div className="imageWithInfo">
