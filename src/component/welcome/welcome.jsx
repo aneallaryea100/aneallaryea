@@ -26,7 +26,7 @@ export default function Welcome() {
                 👋
               </span>
               ,<br />
-              I'm <span className="text-indigo-600">Derick Akaho</span>.
+              I'm <span className="text-indigo-600">Aneal Laryea</span>.
             </h1>
 
             <p className="text-xl md:text-2xl text-gray-700 mb-8 max-w-2xl mx-auto">
