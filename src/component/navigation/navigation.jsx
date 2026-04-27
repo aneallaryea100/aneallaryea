@@ -1,51 +1,4 @@
-// import React, {useState} from 'react';
-// import './navigation.css';
-// import { AiOutlineBars, AiOutlineClose, AiFillGithub, AiOutlineTwitter, AiFillLinkedin, AiFillMail } from "react-icons/ai";
-
-// const Navigation = () => {
-//   const [menuNav, setMenuNav] = useState(false);
-
-//   const showMenu = () => setMenuNav(!menuNav);
-
-//   return (
-//     <div className='navContainer'>
-//       <div className='logo'>
-//         <span><code><a href='#welcome'>Aneal Laryea</a></code></span>
-//       </div>
-
-//         <div className='navLinks'>
-//             <ul className='navlists'>
-//                 <li><a href='#welcome'>Home</a></li>
-//                 <li><a href='#projects'>Projects</a></li>
-//                 <li><a href='#aboutme'>About</a></li>
-//                 <li><a href='#contact'>Contact</a></li>
-//             </ul>
-//             <button type='button' className='toggleMenuIcon' onClick={showMenu}><AiOutlineBars className='navIcon' /></button>
-//               {menuNav && (
-
-//                 <ul className='navlistsToggle'>
-//                   <button type='button' className='toggleMenuIconClose' onClick={showMenu}><AiOutlineClose className='navIconClose' /></button>
-//                     <li><a href='#welcome' onClick={showMenu}>Home</a></li>
-//                     <li><a href='#projects' onClick={showMenu}>Projects</a></li>
-//                     <li><a href='#aboutme' onClick={showMenu}>About</a></li>
-//                     <li><a href='#contact' onClick={showMenu}>Contact</a></li>
-//                     <div className='btntoggleContainer'>
-//                       <button type="button" className="toggleIcon"><a href="https://twitter.com/AnealLaryea" target="_blank" rel="noreferrer"><AiOutlineTwitter /></a></button>
-//                       <button type="button" className="toggleIcon"><a href="https://www.linkedin.com/in/niianeal/" target="_blank" rel="noreferrer"><AiFillLinkedin /></a></button>
-//                       <button type="button" className="toggleIcon"><a href="https://github.com/aneallaryea100" target="_blank" rel="noreferrer"><AiFillGithub /></a></button>
-//                       <button type="button" className="toggleIcon"><a href="mailto:aneallaryea100@gmail.com" target="_blank" rel="noreferrer"><AiFillMail /></a></button>
-//                     </div>
-//                 </ul>
-
-//               )}
-//         </div>
-//     </div>
-//   )
-// }
-
-// export default Navigation;
-
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   AiOutlineBars,
   AiOutlineClose,
@@ -55,114 +8,189 @@ import {
   AiFillMail,
 } from "react-icons/ai";
 
+const NAV_LINKS = [
+  { href: "#welcome",  label: "Home",     id: "welcome"  },
+  { href: "#projects", label: "Projects", id: "projects" },
+  { href: "#aboutme",  label: "About",    id: "aboutme"  },
+  { href: "#contact",  label: "Contact",  id: "contact"  },
+];
+
+const SOCIAL_LINKS = [
+  { icon: <AiOutlineTwitter />, href: "https://twitter.com/AnealLaryea",      label: "Twitter"  },
+  { icon: <AiFillLinkedin />,   href: "https://www.linkedin.com/in/niianeal/",label: "LinkedIn" },
+  { icon: <AiFillGithub />,     href: "https://github.com/aneallaryea100",    label: "GitHub"   },
+  { icon: <AiFillMail />,       href: "mailto:aneallaryea100@gmail.com",      label: "Email"    },
+];
+
 const Navigation = () => {
-  const [menuNav, setMenuNav] = useState(false);
+  const [menuOpen,      setMenuOpen]      = useState(false);
+  const [scrolled,      setScrolled]      = useState(false);
+  const [activeSection, setActiveSection] = useState("welcome");
 
-  const toggleMenu = () => setMenuNav(!menuNav);
+  useEffect(() => {
+    const onScroll = () => {
+      setScrolled(window.scrollY > 60);
+      const ids = ["contact", "aboutme", "projects", "welcome"];
+      for (const id of ids) {
+        const el = document.getElementById(id);
+        if (el && window.scrollY >= el.offsetTop - 120) {
+          setActiveSection(id);
+          break;
+        }
+      }
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
-  const navLinks = [
-    { href: "#welcome", label: "Home" },
-    { href: "#projects", label: "Projects" },
-    { href: "#aboutme", label: "About" },
-    { href: "#contact", label: "Contact" },
-  ];
-
-  const socialLinks = [
-    { icon: <AiOutlineTwitter />, href: "https://twitter.com/AnealLaryea" },
-    { icon: <AiFillLinkedin />, href: "https://www.linkedin.com/in/niianeal/" },
-    { icon: <AiFillGithub />, href: "https://github.com/aneallaryea100" },
-    { icon: <AiFillMail />, href: "mailto:aneallaryea100@gmail.com" },
-  ];
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [menuOpen]);
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
+    <nav
+      className="fixed top-0 left-0 w-full z-50 transition-all duration-500"
+      style={
+        scrolled
+          ? {
+              background: "rgba(14,13,12,0.94)",
+              backdropFilter: "blur(20px)",
+              WebkitBackdropFilter: "blur(20px)",
+              borderBottom: "1px solid rgba(217,119,6,0.12)",
+              boxShadow: "0 4px 24px rgba(0,0,0,0.4)",
+            }
+          : { background: "transparent" }
+      }
+    >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
-          {/* Logo */}
-          <div className="flex items-center">
-            <a
-              href="#welcome"
-              className="text-2xl font-bold text-indigo-600 hover:text-indigo-800 transition-colors"
-            >
-              Aneal Laryea
-            </a>
-          </div>
+        <div className="flex justify-between items-center py-5">
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-6">
-            {navLinks.map((link) => (
+          {/* Logo */}
+          <a
+            href="#welcome"
+            className="text-xl font-bold font-mono tracking-tight"
+            style={{
+              background: "linear-gradient(135deg,#D97706,#F59E0B,#2DD4BF)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+            }}
+          >
+            &lt;AL /&gt;
+          </a>
+
+          {/* Desktop nav links */}
+          <div className="hidden md:flex items-center gap-1">
+            {NAV_LINKS.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-gray-700 hover:text-indigo-600 transition-colors font-medium"
+                className="relative px-4 py-2 text-sm font-medium transition-colors duration-300 group"
+                style={{ color: activeSection === link.id ? "#F59E0B" : "#8A7E6E" }}
               >
                 {link.label}
+                <span
+                  className="absolute bottom-0 left-0 h-0.5 rounded-full transition-all duration-300"
+                  style={{
+                    width: activeSection === link.id ? "100%" : "0%",
+                    background: "linear-gradient(90deg,#D97706,#2DD4BF)",
+                  }}
+                />
+                {activeSection !== link.id && (
+                  <span
+                    className="absolute bottom-0 left-0 h-0.5 rounded-full w-0 group-hover:w-full transition-all duration-300"
+                    style={{ background: "linear-gradient(90deg,#D97706,#2DD4BF)", opacity: 0.5 }}
+                  />
+                )}
               </a>
             ))}
           </div>
 
-          {/* Mobile Menu Toggle */}
-          <div className="md:hidden">
-            <button
-              onClick={toggleMenu}
-              className="text-gray-700 hover:text-indigo-600 focus:outline-none"
-            >
-              {menuNav ? (
-                <AiOutlineClose className="h-6 w-6" />
-              ) : (
-                <AiOutlineBars className="h-6 w-6" />
-              )}
-            </button>
+          {/* Desktop social icons */}
+          <div className="hidden md:flex items-center gap-4">
+            {SOCIAL_LINKS.map((s) => (
+              <a
+                key={s.label}
+                href={s.href}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={s.label}
+                className="text-xl transition-all duration-300 hover:scale-110"
+                style={{ color: "#5a5045" }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#F59E0B")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "#5a5045")}
+              >
+                {s.icon}
+              </a>
+            ))}
           </div>
+
+          {/* Mobile hamburger */}
+          <button
+            onClick={() => setMenuOpen((v) => !v)}
+            className="md:hidden transition-colors focus:outline-none"
+            style={{ color: "#8A7E6E" }}
+            aria-label="Toggle menu"
+          >
+            {menuOpen ? <AiOutlineClose size={24} /> : <AiOutlineBars size={24} />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile full-screen menu */}
+      <div
+        className="md:hidden fixed inset-0 z-40 flex flex-col p-8 transition-all duration-400"
+        style={{
+          background: "rgba(14,13,12,0.98)",
+          backdropFilter: "blur(24px)",
+          WebkitBackdropFilter: "blur(24px)",
+          opacity: menuOpen ? 1 : 0,
+          pointerEvents: menuOpen ? "auto" : "none",
+          transform: menuOpen ? "translateY(0)" : "translateY(-8px)",
+        }}
+      >
+        <div className="flex justify-end mb-12">
+          <button
+            onClick={() => setMenuOpen(false)}
+            className="transition-colors"
+            style={{ color: "#8A7E6E" }}
+          >
+            <AiOutlineClose size={28} />
+          </button>
         </div>
 
-        {/* Mobile Menu */}
-        {menuNav && (
-          <div className="md:hidden fixed inset-0 bg-white z-40">
-            <div className="flex flex-col h-full">
-              {/* Close Button */}
-              <div className="flex justify-end p-4">
-                <button
-                  onClick={toggleMenu}
-                  className="text-gray-700 hover:text-indigo-600 focus:outline-none"
-                >
-                  <AiOutlineClose className="h-6 w-6" />
-                </button>
-              </div>
+        <nav className="flex flex-col gap-8 flex-1">
+          {NAV_LINKS.map((link, i) => (
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={() => setMenuOpen(false)}
+              className="text-3xl font-bold transition-all duration-300 flex items-center gap-3"
+              style={{ color: "#F5F0E8" }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#F59E0B")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "#F5F0E8")}
+            >
+              <span className="font-mono text-base" style={{ color: "#D97706" }}>0{i + 1}.</span>
+              {link.label}
+            </a>
+          ))}
+        </nav>
 
-              {/* Mobile Nav Links */}
-              <div className="flex flex-col space-y-6 px-6 py-8">
-                {navLinks.map((link) => (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    onClick={toggleMenu}
-                    className="text-2xl font-bold text-gray-800 hover:text-indigo-600 transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                ))}
-              </div>
-
-              {/* Social Links */}
-              <div className="mt-auto p-6">
-                <div className="flex justify-center space-x-6">
-                  {socialLinks.map((social, index) => (
-                    <a
-                      key={index}
-                      href={social.href}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="text-gray-700 hover:text-indigo-600 transition-colors text-2xl"
-                    >
-                      {social.icon}
-                    </a>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
+        <div className="flex justify-center gap-6 py-8" style={{ borderTop: "1px solid rgba(217,119,6,0.12)" }}>
+          {SOCIAL_LINKS.map((s) => (
+            <a
+              key={s.label}
+              href={s.href}
+              target="_blank"
+              rel="noreferrer"
+              className="text-2xl transition-colors"
+              style={{ color: "#5a5045" }}
+            >
+              {s.icon}
+            </a>
+          ))}
+        </div>
       </div>
     </nav>
   );

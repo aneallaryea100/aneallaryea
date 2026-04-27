@@ -1,166 +1,230 @@
-import React from "react";
+import { useEffect, useRef } from "react";
+import { AiFillMail } from "react-icons/ai";
+import { FaPhoneAlt, FaMapMarkerAlt, FaArrowRight } from "react-icons/fa";
+
+function useReveal(direction = "up") {
+  const ref = useRef(null);
+  useEffect(() => {
+    const cls =
+      direction === "left"  ? "reveal-left"  :
+      direction === "right" ? "reveal-right" : "reveal";
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("revealed");
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
+    );
+    const el = ref.current;
+    if (el) {
+      el.classList.add(cls);
+      observer.observe(el);
+    }
+    return () => el && observer.unobserve(el);
+  }, [direction]);
+  return ref;
+}
+
+const INPUT_BASE = {
+  background: "rgba(14,13,12,0.8)",
+  border: "1px solid rgba(217,119,6,0.18)",
+  color: "#F5F0E8",
+  outline: "none",
+  transition: "border-color 0.3s, box-shadow 0.3s",
+};
+
+const onFocus = (e) => {
+  e.target.style.borderColor = "rgba(217,119,6,0.6)";
+  e.target.style.boxShadow   = "0 0 0 3px rgba(217,119,6,0.12)";
+};
+const onBlur = (e) => {
+  e.target.style.borderColor = "rgba(217,119,6,0.18)";
+  e.target.style.boxShadow   = "none";
+};
+
+const CONTACT_INFO = [
+  { icon: <AiFillMail size={17} />,     label: "Email",    value: "aneallaryea100@gmail.com", href: "mailto:aneallaryea100@gmail.com" },
+  { icon: <FaPhoneAlt size={14} />,     label: "Phone",    value: "+(233) 549-749-242",       href: "tel:+233549749242"              },
+  { icon: <FaMapMarkerAlt size={16} />, label: "Location", value: "Accra, Ghana",              href: null                             },
+];
 
 const Contact = () => {
-  // const [formData, setFormData] = useState({
-  //   name: "",
-  //   email: "",
-  //   message: "",
-  // });
-
-  // const handleChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setFormData((prevState) => ({
-  //     ...prevState,
-  //     [name]: value,
-  //   }));
-  // };
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   // You can add form validation here if needed
-  // };
+  const titleRef = useReveal("up");
+  const leftRef  = useReveal("left");
+  const rightRef = useReveal("right");
 
   return (
-    <div
-      className="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8"
+    <section
       id="contact"
+      className="min-h-screen py-24 px-4 sm:px-6 lg:px-8"
+      style={{ background: "linear-gradient(180deg,#0e0d0c 0%,#151310 100%)" }}
     >
-      <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-xl overflow-hidden">
-        <div className="md:flex">
-          {/* Contact Context Section */}
-          <div className="md:w-1/2 bg-indigo-600 p-8 text-white">
-            <h1 className="text-3xl font-bold mb-6">Get in Touch</h1>
-            <p className="text-indigo-100 mb-6">
-              I'm always interested in hearing about new projects. If you'd like
-              to collaborate or have a question, please feel free to reach out.
-            </p>
-            <div className="space-y-4">
-              <div className="flex items-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6 mr-3 text-indigo-200"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                  />
-                </svg>
-                <a
-                  href="mailto:aneallaryea100@gmail.com"
-                  className="hover:underline"
-                >
-                  aneallaryea100@gmail.com
-                </a>
-              </div>
-              <div className="flex items-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6 mr-3 text-indigo-200"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                  />
-                </svg>
-                <span>
-                  <a href="tel:+233549749242" className="hover:underline">
-                    +(233) 549-749-242
-                  </a>
-                </span>
-              </div>
-            </div>
-          </div>
+      <div className="max-w-5xl mx-auto">
 
-          {/* Contact Form Section */}
-          <div className="md:w-1/2 p-8">
-            <form
-              //onSubmit={handleSubmit}
-              action="https://formspree.io/f/xjvllnnl"
-              method="POST"
-              className="space-y-6"
+        {/* Section header */}
+        <div ref={titleRef} className="text-center mb-16">
+          <p className="font-mono text-xs tracking-[0.3em] uppercase mb-3" style={{ color: "#D97706" }}>Let's Connect</p>
+          <h2 className="text-4xl md:text-5xl font-black mb-4" style={{ color: "#F5F0E8" }}>
+            Get in{" "}
+            <span
+              style={{
+                 display: "inline-block",
+                background: "linear-gradient(135deg,#D97706,#F59E0B)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+              }}
+            >
+              Touch
+            </span>
+          </h2>
+          <div className="section-line" />
+        </div>
+
+        <div
+          className="rounded-3xl overflow-hidden"
+          style={{
+            background: "rgba(22,20,15,0.8)",
+            border: "1px solid rgba(217,119,6,0.15)",
+            boxShadow: "0 24px 64px rgba(0,0,0,0.45)",
+          }}
+        >
+          <div className="md:flex">
+
+            {/* ── Left panel ──────────────────────────────────── */}
+            <div
+              ref={leftRef}
+              className="md:w-2/5 p-8 md:p-10 flex flex-col justify-between"
+              style={{
+                background: "linear-gradient(145deg,rgba(217,119,6,0.1),rgba(13,148,136,0.06))",
+                borderRight: "1px solid rgba(217,119,6,0.1)",
+              }}
             >
               <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Full Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  //value={formData.name}
-                  //onChange={handleChange}
-                  required
-                  maxLength={30}
-                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 text-gray-900 bg-white"
-                  placeholder="Enter your full name"
-                />
+                <h3 className="text-2xl font-bold mb-4" style={{ color: "#F5F0E8" }}>Let's work together</h3>
+                <p className="leading-relaxed mb-8" style={{ color: "#8A7E6E" }}>
+                  I'm always interested in hearing about new projects. If you'd like to collaborate
+                  or just say hi, my inbox is always open.
+                </p>
+
+                <div className="space-y-5">
+                  {CONTACT_INFO.map((item) => (
+                    <div key={item.label} className="flex items-center gap-4">
+                      <div
+                        className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
+                        style={{
+                          background: "rgba(217,119,6,0.15)",
+                          border: "1px solid rgba(217,119,6,0.25)",
+                          color: "#F59E0B",
+                        }}
+                      >
+                        {item.icon}
+                      </div>
+                      <div>
+                        <p className="text-xs uppercase tracking-wider" style={{ color: "#5a5045" }}>{item.label}</p>
+                        {item.href ? (
+                          <a
+                            href={item.href}
+                            className="text-sm font-medium transition-colors duration-200"
+                            style={{ color: "#C8B99A" }}
+                            onMouseEnter={(e) => (e.currentTarget.style.color = "#F59E0B")}
+                            onMouseLeave={(e) => (e.currentTarget.style.color = "#C8B99A")}
+                          >
+                            {item.value}
+                          </a>
+                        ) : (
+                          <span className="text-sm font-medium" style={{ color: "#C8B99A" }}>{item.value}</span>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
 
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Email Address
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  //value={formData.email}
-                  //onChange={handleChange}
-                  required
-                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 text-gray-900 bg-white"
-                  placeholder="Enter your email address"
-                />
-              </div>
+              {/* Decorative orb */}
+              <div
+                className="w-40 h-40 rounded-full blur-3xl mt-10 opacity-25"
+                style={{ background: "radial-gradient(circle,#D97706,transparent)" }}
+              />
+            </div>
 
-              <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Your Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  //value={formData.message}
-                  //onChange={handleChange}
-                  required
-                  maxLength={500}
-                  rows={4}
-                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 text-gray-900 bg-white"
-                  placeholder="Enter your message here"
-                ></textarea>
-              </div>
+            {/* ── Form panel ──────────────────────────────────── */}
+            <div ref={rightRef} className="md:w-3/5 p-8 md:p-10">
+              <form action="https://formspree.io/f/xjvllnnl" method="POST" className="space-y-5">
+                <div className="grid sm:grid-cols-2 gap-5">
+                  <div>
+                    <label htmlFor="name" className="block text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: "#8A7E6E" }}>
+                      Full Name
+                    </label>
+                    <input
+                      type="text" id="name" name="name"
+                      required maxLength={30} placeholder="Your full name"
+                      className="w-full px-4 py-3 rounded-xl text-sm"
+                      style={{ ...INPUT_BASE, "::placeholder": { color: "#3d3028" } }}
+                      onFocus={onFocus} onBlur={onBlur}
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="email" className="block text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: "#8A7E6E" }}>
+                      Email Address
+                    </label>
+                    <input
+                      type="email" id="email" name="email"
+                      required placeholder="your@email.com"
+                      className="w-full px-4 py-3 rounded-xl text-sm"
+                      style={INPUT_BASE}
+                      onFocus={onFocus} onBlur={onBlur}
+                    />
+                  </div>
+                </div>
 
-              <div>
+                <div>
+                  <label htmlFor="subject" className="block text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: "#8A7E6E" }}>
+                    Subject
+                  </label>
+                  <input
+                    type="text" id="subject" name="subject"
+                    placeholder="What's this about?"
+                    className="w-full px-4 py-3 rounded-xl text-sm"
+                    style={INPUT_BASE}
+                    onFocus={onFocus} onBlur={onBlur}
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="message" className="block text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: "#8A7E6E" }}>
+                    Message
+                  </label>
+                  <textarea
+                    id="message" name="message"
+                    required maxLength={500} rows={5}
+                    placeholder="Tell me about your project..."
+                    className="w-full px-4 py-3 rounded-xl text-sm resize-none"
+                    style={INPUT_BASE}
+                    onFocus={onFocus} onBlur={onBlur}
+                  />
+                </div>
+
                 <button
                   type="submit"
-                  className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                  className="group w-full flex items-center justify-center gap-3 py-4 px-6 rounded-xl font-semibold transition-all duration-300 hover:scale-[1.02]"
+                  style={{
+                    background: "linear-gradient(135deg,#D97706,#F59E0B)",
+                    color: "#0e0d0c",
+                    boxShadow: "0 0 28px rgba(217,119,6,0.35)",
+                  }}
                 >
                   Send Message
+                  <FaArrowRight size={14} className="group-hover:translate-x-1 transition-transform duration-300" />
                 </button>
-              </div>
-            </form>
+              </form>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -1,60 +1,56 @@
-import React from "react";
-import {
-  AiOutlineMail,
-  AiOutlineGithub,
-  AiOutlineLinkedin,
-  AiOutlineTwitter,
-} from "react-icons/ai";
+import { AiOutlineMail, AiOutlineGithub, AiOutlineLinkedin, AiOutlineTwitter } from "react-icons/ai";
 
-const Footer = () => {
-  return (
-    <footer className="bg-indigo-50 py-8 px-4 sm:px-6 lg:px-8 border-t border-indigo-100">
-      <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between">
-        <div className="text-center sm:text-left mb-4 sm:mb-0">
-          <p className="text-indigo-800 font-medium text-sm">
-            Designed & Built by Aneal Laryea
-          </p>
-        </div>
+const SOCIAL = [
+  { Icon: AiOutlineMail,     href: "mailto:aneallaryea100@gmail.com",      label: "Email"    },
+  { Icon: AiOutlineGithub,   href: "https://github.com/aneallaryea100",    label: "GitHub"   },
+  { Icon: AiOutlineLinkedin, href: "https://www.linkedin.com/in/niianeal/",label: "LinkedIn" },
+  { Icon: AiOutlineTwitter,  href: "https://twitter.com/AnealLaryea",      label: "Twitter"  },
+];
 
-        <div className="flex space-x-4">
+const Footer = () => (
+  <footer
+    className="py-8 px-4"
+    style={{
+      background: "#0e0d0c",
+      borderTop: "1px solid rgba(217,119,6,0.1)",
+    }}
+  >
+    <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p className="text-sm" style={{ color: "#5a5045" }}>
+        Designed &amp; Built by{" "}
+        <span
+          className="font-semibold"
+          style={{
+            background: "linear-gradient(135deg,#D97706,#F59E0B)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            backgroundClip: "text",
+          }}
+        >
+          Aneal Laryea
+        </span>{" "}
+        · {new Date().getFullYear()}
+      </p>
+
+      <div className="flex items-center gap-4">
+        {SOCIAL.map(({ Icon, href, label }) => (
           <a
-            href="mailto:aneallaryea100@gmail.com"
-            className="text-indigo-600 hover:text-indigo-800 transition-colors duration-300"
-            aria-label="Email"
-          >
-            <AiOutlineMail className="w-6 h-6" />
-          </a>
-          <a
-            href="https://github.com/aneallaryea100"
-            target="_blank"
+            key={label}
+            href={href}
+            target={href.startsWith("mailto") ? undefined : "_blank"}
             rel="noopener noreferrer"
-            className="text-indigo-600 hover:text-indigo-800 transition-colors duration-300"
-            aria-label="GitHub"
+            aria-label={label}
+            className="transition-all duration-300 hover:scale-110"
+            style={{ color: "#3d3028" }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = "#D97706")}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "#3d3028")}
           >
-            <AiOutlineGithub className="w-6 h-6" />
+            <Icon className="w-5 h-5" />
           </a>
-          <a
-            href="https://www.linkedin.com/in/niianeal/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-indigo-600 hover:text-indigo-800 transition-colors duration-300"
-            aria-label="LinkedIn"
-          >
-            <AiOutlineLinkedin className="w-6 h-6" />
-          </a>
-          <a
-            href="https://twitter.com/AnealLaryea"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-indigo-600 hover:text-indigo-800 transition-colors duration-300"
-            aria-label="Twitter"
-          >
-            <AiOutlineTwitter className="w-6 h-6" />
-          </a>
-        </div>
+        ))}
       </div>
-    </footer>
-  );
-};
+    </div>
+  </footer>
+);
 
 export default Footer;
