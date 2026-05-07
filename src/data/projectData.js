@@ -2,115 +2,88 @@ const projectData = [
   {
     id: 12012,
     name: "BIZ360",
-    description: "An Enterprise Resource Planning App.",
+    description:
+      "An Enterprise Resource Planning app for managing business operations, resources, and workflows at scale.",
     image: "/biz360.png",
-    technologies: [
-      "ReactJs",
-      "TypeScript",
-      "Bootsrap",
-      "Redux",
-      "Tansack Query",
-    ],
+    technologies: ["React", "TypeScript", "Bootstrap", "Redux", "TanStack Query"],
   },
   {
     id: 15513,
     name: "Partner Portal",
     description:
-      "A web application to manage engagement between an NGO and its partners, track activities and deliverables",
+      "A web application to manage engagement between an NGO and its partners, track activities and deliverables.",
     image: "/pportal.png",
-    technologies: ["JavaScript", "JQuery", "Bootsrap", "CSS", "Redux"],
+    technologies: ["JavaScript", "jQuery", "Bootstrap", "CSS", "Redux"],
+  },
+  {
+    id: 8801002,
+    name: "MoneyFloat",
+    description:
+      "Marketing website for MoneyFloat — a cash and float tracking tool built for mobile money agents in Ghana. Features session management, real-time balance reconciliation, PDF reports, and multi-agent support.",
+    image: "/moneyfloatweb.png",
+    technologies: ["React", "TypeScript", "Vite", "React Router"],
+  },
+  {
+    id: 8801001,
+    name: "MoVaultX",
+    description:
+      "Marketing website for MoVaultX — a mobile savings app built for Ghana. Highlights savings dashboards, instant deposits, admin-approved payouts, group savings, and biometric login.",
+    image: "/movaultxweb.png",
+    technologies: ["React", "TypeScript", "Vite", "Tailwind CSS", "React Router"],
+  },
+  {
+    id: 8801003,
+    name: "ONE ONE INC",
+    description:
+      "A luxury African streetwear e-commerce platform with a curated shop, community features, admin dashboard, and a full checkout flow powered by Firebase.",
+    image: "/oneonepic.png",
+    technologies: ["Next.js", "Tailwind CSS", "Redux", "Firebase", "Framer Motion", "Zod"],
+  },
+  {
+    id: 8801004,
+    name: "JSKLR",
+    description:
+      "A multi-tenant SaaS booking platform — each business gets its own branded booking page at a subdomain, with staff management, service scheduling, and direct Stripe-powered payments. Built as a pnpm monorepo.",
+    image: "/jsklrweb.png",
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Fastify",
+      "Node.js",
+      "PostgreSQL",
+      "Redis",
+      "Stripe",
+      "Tailwind CSS",
+    ],
   },
   {
     id: 125145,
     name: "RxPMS",
     description:
-      "A pharmacy web app for managing  inventories, employees sales, payments & stock management",
+      "A pharmacy management web app for handling inventories, employee sales, payments, and stock control.",
     image: "/rxpms.png",
-    technologies: ["NextJs", "Tailwind", "Tansack Query", "Redux"],
+    technologies: ["Next.js", "Tailwind CSS", "TanStack Query", "Redux"],
   },
   {
     id: 1005145,
     name: "Luxe Valet Ghana",
-    description: "A web app for valet services and booking.",
+    description:
+      "A modern web app for premium valet parking services and online booking management in Ghana.",
     image: "/luxevalet.png",
-    technologies: ["ReactJs", "Tailwind", "Redux"],
+    technologies: ["React", "Tailwind CSS", "Redux"],
   },
-  //   {
-  //     id: 1,
-  //     name: "TAL-ART CONFERENCE",
-  //     description:
-  //       "The webpage displays information about venues, speakers and events of a conference. The speaker section of the webpage is built dynamically with JavaScript. ",
-  //     image:
-  //       "https://github.com/aneallaryea100/Capstone/blob/capstone/asset/image/newtarlartss.png?raw=true",
-  //     livedemo: "https://aneallaryea100.github.io/Capstone/#",
-  //     github: "https://github.com/aneallaryea100/Capstone/tree/capstone",
-  //     technologies: ["HTML", "CSS", "JavaScript"],
-  //   },
-  //   {
-  //     id: 2,
-  //     name: "Solovino Tv Show",
-  //     description:
-  //       "This web application allows the user to like and comment on a movie. Movies displayed on the UI are being fetched from an API. This is a pair programming project built in collaboration with Diego Mero. I worked on the home section and the like functionality.",
-  //     image:
-  //       "https://github.com/DiegoMero/javascript-capstone/blob/dev/src/images/solotvnew.png?raw=true",
-  //     livedemo: "https://diegomero.github.io/javascript-capstone/dist/",
-  //     github: "https://github.com/DiegoMero/javascript-capstone",
-  //     technologies: ["HTML", "CSS", "JavaScript"],
-  //   },
-  //   {
-  //     id: 3,
-  //     name: "Rick and Morty",
-  //     description:
-  //       "Rick and Morty is a American adult animated science-fiction sitcom. This web application fetches data from the rick and morty API and allows user to know more about each character in the sitcom.",
-  //     image:
-  //       "https://github.com/aneallaryea100/Rick_Morty/raw/testing/src/images/ricky.png",
-  //     livedemo: "https://rickkyandmorty.netlify.app/",
-  //     github: "https://github.com/aneallaryea100/Rick_Morty",
-  //     technologies: ["React", "Redux", "Jest"],
-  //   },
-  //   {
-  //     id: 4,
-  //     name: "Awesome Books",
-  //     description:
-  //       "This is web app that allows users to enter information about their favorite books. Data displayed on the UI depends on the local storage. The data entered by the user are stored in local storage and can be removed from localStorage.",
-  //     image:
-  //       "https://github.com/aneallaryea100/Awesome-Books/raw/modules/modules/images/awesome.png",
-  //     livedemo: "https://teal-blini-0de266.netlify.app/#add-book-section",
-  //     github: "https://github.com/aneallaryea100/Awesome-Books/tree/modules",
-  //     technologies: ["HTML", "CSS", "JavaScript"],
-  //   },
-  //   {
-  //     id: 5,
-  //     name: "Math-Magician",
-  //     description:
-  //       "This project is about using calculators. It is a project aimed at teaching microverse student how to implement react functionality. It is a single app application with a Home section, calculator section and Quote section.",
-  //     image:
-  //       "https://github.com/aneallaryea100/Math-Magicians/raw/testing/src/images/mathtatenda.png",
-  //     livedemo: "https://cool-mochi-15892a.netlify.app/",
-  //     github: "https://github.com/aneallaryea100/Math-Magicians/tree/testing",
-  //     technologies: ["HTML", "CSS", "React"],
-  //   },
-  //   {
-  //     id: 6,
-  //     name: "Spaces Travelers Hub",
-  //     description:
-  //       "A web application, build with React and Redux, that allows users to book rockets and join selected space missions. This is a pair programming project built in collaboration with Vannesa Bonito. I worked on the missions section of the project.",
-  //     image:
-  //       "https://s3.amazonaws.com/poly-screenshots.angel.co/Project/17/1349320/bf17b4403475e70bb2597ed843ace679-original.JPG",
-  //     livedemo: "https://poetic-truffle-186148.netlify.app/",
-  //     github: "https://github.com/VaneCode/SpaceTravelers",
-  //     technologies: ["Bootsrap", "React", "Redux"],
-  //   },
   {
     id: 7554840,
     name: "Tribals",
     description:
-      "Tribals is a platform that allows creatives to keep and share their creativity to the world.",
+      "A creative-sharing platform that empowers artists and creatives to publish and showcase their work to the world.",
     image: "/tribals.png",
     livedemo: "https://tribalz.netlify.app/",
     github: "https://github.com/aneallaryea100/nextui",
-    technologies: ["Nextjs", "Tailwind", "Redux"],
+    technologies: ["Next.js", "Tailwind CSS", "Redux"],
   },
+  
+  
 ];
 
 export default projectData;
